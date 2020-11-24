@@ -25,26 +25,53 @@ function App() {
 }
 */
 
-const customer = {
+const customers = [
+{
   'id' :1,
-  'image' : 'https://placeimg.com/128/128/any',
+  'image' : 'https://placeimg.com/128/128/1',
   'name': '홍길동',
   'birthday' : '001010',
   'gender' : '남자',
   'job': '대학생'
+},
+{
+  'id' :2,
+  'image' : 'https://placeimg.com/128/128/2',
+  'name': '홍길동',
+  'birthday' : '041231',
+  'gender' : '남자',
+  'job': '프로그래머'
+},
+{
+  'id' :3,
+  'image' : 'https://placeimg.com/128/128/3',
+  'name': '홍길동',
+  'birthday' : '990892',
+  'gender' : '남자',
+  'job': '디자니어'
 }
+]
 
 class App extends Component{
   render(){
     return(
-      <Customer 
-        id={customer.id}
-        image={customer.image}
-        name={customer.name}
-        birthday={customer.birthday}
-        gender={customer.gender}
-        job={customer.job}
-      />
+      <div>
+        {
+          customers.map(c=>{
+            return(
+              <Customer 
+                key={c.id}
+                id={c.id}
+                image={c.image}
+                name={c.name}
+                birthday={c.birthday}
+                gender={c.gender}
+                job={c.job}
+              />
+            );
+          }) 
+        }
+      </div>
     );
   }
 }
